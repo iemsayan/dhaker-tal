@@ -1,0 +1,103 @@
+/* Reusable warm glass surfaces — kept separate so you can tune the effect in one place. */
+:root {
+  --glass-fill: rgba(255, 236, 205, .1);
+  --glass-edge: rgba(255, 225, 180, .26);
+  --glass-shine: rgba(255, 255, 255, .18);
+}
+
+.nav-shell, .utility-grid a, .puja-almanac, .almanac-spotlight, .phone, .faq-list, .contributors, .logo-glass {
+  border-color: var(--glass-edge);
+  background-color: var(--glass-fill);
+  box-shadow: inset 0 1px 0 var(--glass-shine), 0 18px 40px rgba(26, 5, 9, .12);
+  backdrop-filter: blur(18px) saturate(135%);
+}
+
+.utility-grid a, .puja-almanac { background-color: rgba(255, 248, 232, .22); }
+.almanac-spotlight { background-color: rgba(57, 12, 17, .68); }
+.faq-list, .contributors { background-color: rgba(255, 242, 219, .06); }
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(125deg, rgba(42, 11, 17, .93), rgba(77, 23, 23, .87));
+}
+.site-footer:before {
+  content: '';
+  position: absolute;
+  inset: -35% 25% auto -15%;
+  height: 180%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(226, 144, 59, .16), transparent 62%);
+  filter: blur(18px);
+  pointer-events: none;
+}
+.footer-inner { position: relative; }
+.footer-brand { display: flex; align-items: center; gap: 14px; width: max-content; max-width: 100%; }
+.logo-glass {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  border: 1px solid var(--glass-edge);
+  border-radius: 22px;
+  background: linear-gradient(145deg, rgba(255, 213, 144, .22), rgba(101, 18, 24, .13));
+  transform: rotate(-4deg);
+  transition: transform .35s, box-shadow .35s;
+  flex-shrink: 0;
+}
+.logo-glass:after {
+  content: '';
+  position: absolute;
+  inset: 1px 40% 50% 6px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, .38), transparent);
+  pointer-events: none;
+}
+.logo-glass img { width: 104%; height: 104%; object-fit: cover; mix-blend-mode: screen; }
+.footer-brand:hover .logo-glass {
+  transform: rotate(2deg) translateY(-4px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .35), 0 15px 32px rgba(0, 0, 0, .22);
+}
+.contributors { padding: 16px 20px; border: 1px solid var(--glass-edge); border-radius: 14px; }
+.footer-inner .contributors { border-left: 1px solid var(--glass-edge); }
+
+.hero { background: radial-gradient(circle at 50% 45%, #592018 0%, #21090d 58%, #120508 100%); }
+.hero-background { background-size: cover; background-repeat: no-repeat; background-position: center; }
+.hero-content { position: relative; z-index: 2; }
+
+.hero-countdown {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 13px;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 22px;
+  padding: 10px 13px;
+  border: 1px solid rgba(255, 226, 181, .28);
+  border-radius: 12px;
+  background: linear-gradient(125deg, rgba(255, 230, 191, .16), rgba(100, 18, 21, .12));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .23), 0 12px 28px rgba(8, 2, 4, .14);
+  backdrop-filter: blur(18px) saturate(130%);
+}
+.hero-countdown p { margin: 0 3px 0 0; font-size: 8px; font-weight: bold; letter-spacing: .15em; color: #ffe1b1; }
+.hero-countdown span { display: grid; gap: 1px; min-width: 31px; }
+.hero-countdown strong { font: 20px / 1 var(--display); color: #fff1d8; }
+.hero-countdown small {
+  font-size: 7px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: rgba(255, 238, 209, .65);
+}
+
+@media (max-width: 700px) {
+  .footer-brand { gap: 11px; }
+  .logo-glass { width: 62px; height: 62px; border-radius: 18px; }
+  .contributors { padding: 14px 16px; }
+  .hero-countdown { gap: 8px; padding: 9px 10px; }
+  .hero-countdown p { width: 100%; }
+  .hero-countdown strong { font-size: 18px; }
+  .hero-countdown span { min-width: 28px; }
+}

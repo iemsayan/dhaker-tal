@@ -1,0 +1,46 @@
+@keyframes almanac-draw {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(210%); }
+}
+
+@media (max-width: 900px) {
+  .almanac-days {
+    overflow-x: auto;
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(156px, 1fr);
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(122, 54, 40, .35) transparent;
+    -webkit-overflow-scrolling: touch;
+  }
+  .almanac-day { min-height: 220px; scroll-snap-align: start; }
+  .almanac-track { right: 0; }
+}
+
+@media (max-width: 700px) {
+  .puja-almanac { margin-top: 28px; padding: 16px; }
+  .almanac-intro strong { font-size: 24px; }
+  .almanac-track { top: 98px; left: 12%; right: 0; }
+  .almanac-days {
+    margin-right: -16px;
+    padding-right: 16px;
+  }
+  .almanac-day { padding-left: 8px; }
+  .almanac-spotlight {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+  .almanac-spotlight > span { white-space: normal; }
+}
+
+@media (hover: none) {
+  .almanac-day:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .almanac-track i { animation: none; }
+}

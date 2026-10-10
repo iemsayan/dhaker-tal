@@ -1,0 +1,30 @@
+✓ Lockfile passes supply-chain policies (verified 9m ago)
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +352
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Packages are hard linked from the content-addressable store to the virtual store.
+  Content-addressable store is at: D:\.pnpm-store\v11
+  Virtual store is at:             node_modules/.pnpm
+Progress: resolved 352, reused 349, downloaded 0, added 33
+Progress: resolved 352, reused 349, downloaded 0, added 47
+Progress: resolved 352, reused 349, downloaded 0, added 79
+Progress: resolved 352, reused 349, downloaded 0, added 99
+Progress: resolved 352, reused 349, downloaded 0, added 172
+Progress: resolved 352, reused 349, downloaded 0, added 211
+Progress: resolved 352, reused 349, downloaded 0, added 326
+Progress: resolved 352, reused 349, downloaded 0, added 347
+Progress: resolved 352, reused 349, downloaded 0, added 349
+[WARN] GET https://registry.npmjs.org/next/-/next-16.3.3.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-16.3.3.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.3.tgz error (23). Will retry in 10 seconds. 2 retries left.
+[WARN] GET https://registry.npmjs.org/next/-/next-16.3.3.tgz error (23). Will retry in 1 minute. 1 retries left.
+[WARN] GET https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-16.3.3.tgz error (23). Will retry in 1 minute. 1 retries left.
+[WARN] GET https://registry.npmjs.org/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.3.tgz error (23). Will retry in 1 minute. 1 retries left.
+[23] The operation was aborted due to timeout
+
+TimeoutError: The operation was aborted due to timeout
+    at new DOMException (node:internal/per_context/domexception:76:18)
+    at Timeout._onTimeout (node:internal/abort_controller:210:9)
+    at listOnTimeout (node:internal/timers:635:17)
+    at process.processTimers (node:internal/timers:571:7)

@@ -1,0 +1,877 @@
+.teamPage {
+  min-height: 100vh;
+  background: #17130f;
+  color: #f4ede2;
+  padding: 0 6vw;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 30px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(244, 237, 226, 0.14);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.logoBengali {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.logoEnglish {
+  margin-top: 6px;
+
+  font-size: 9px;
+  letter-spacing: 0.28em;
+
+  opacity: 0.55;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  color: inherit;
+  text-decoration: none;
+
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  opacity: 0.6;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.backLink:hover {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+.backLink svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  padding: 120px 0 100px;
+}
+
+.kicker {
+  margin: 0 0 25px;
+
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  opacity: 0.45;
+}
+
+.bengali {
+  margin: 0 0 20px;
+
+  font-size: 22px;
+
+  opacity: 0.9;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(70px, 10vw, 150px);
+  line-height: 0.82;
+
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+.hero h1 em {
+  font-style: italic;
+}
+
+.description {
+  max-width: 480px;
+
+  margin: 50px 0 0;
+
+  font-size: 16px;
+  line-height: 1.8;
+
+  opacity: 0.55;
+}
+
+/* ========================================
+   TEAM LIST
+======================================== */
+
+.teamList {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+
+  border-top: 1px solid rgba(244, 237, 226, 0.2);
+}
+
+.member {
+  border-bottom: 1px solid rgba(244, 237, 226, 0.2);
+}
+
+/* ========================================
+   MEMBER BUTTON
+======================================== */
+
+.memberButton {
+  width: 100%;
+
+  padding: 30px 0;
+
+  display: grid;
+  grid-template-columns: 80px 1fr 55px;
+  align-items: center;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+  color: inherit;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.memberNumber {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+
+  opacity: 0.35;
+}
+
+.memberInfo {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.memberInfo strong {
+  font-size: clamp(25px, 3vw, 43px);
+
+  font-weight: 400;
+
+  letter-spacing: -0.035em;
+
+  transition: opacity 0.3s ease;
+}
+
+.memberInfo small {
+  font-size: 10px;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  opacity: 0.42;
+}
+
+.memberButton:hover .memberInfo strong {
+  opacity: 0.65;
+}
+
+/* ========================================
+   ARROW
+======================================== */
+
+.arrow {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(244, 237, 226, 0.25);
+
+  border-radius: 50%;
+
+  transition:
+    transform 0.45s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.memberButton:hover .arrow {
+  border-color: rgba(244, 237, 226, 0.6);
+}
+
+.memberOpen .arrow {
+  transform: rotate(180deg);
+}
+
+/* ========================================
+   EXPANDING DETAILS
+======================================== */
+
+.details {
+  display: grid;
+
+  grid-template-rows: 0fr;
+
+  transition:
+    grid-template-rows 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detailsOpen {
+  grid-template-rows: 1fr;
+}
+
+.detailsInner {
+  min-height: 0;
+
+  overflow: hidden;
+
+  padding-left: 80px;
+  padding-right: 55px;
+
+  display: grid;
+
+  grid-template-columns: 250px minmax(0, 1fr);
+
+  gap: 65px;
+
+  opacity: 0;
+
+  transform: translateY(-15px);
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.55s ease;
+}
+
+.detailsOpen .detailsInner {
+  padding-top: 20px;
+  padding-bottom: 45px;
+
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ========================================
+   PROFILE AREA
+======================================== */
+
+.profileArea {
+  min-width: 0;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+/* ========================================
+   PROFILE IMAGE
+======================================== */
+
+.profileImageWrap {
+  width: 100%;
+
+  max-width: 250px;
+
+  aspect-ratio: 4 / 5;
+
+  overflow: hidden;
+
+  background: #261e18;
+
+  border-radius: 4px;
+
+  position: relative;
+}
+
+.profileImage {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profileImageWrap:hover .profileImage {
+  transform: scale(1.04);
+}
+
+/* ========================================
+   RIGHT INFORMATION AREA
+======================================== */
+
+.infoArea {
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  padding-top: 4px;
+}
+
+/* ========================================
+   BIO
+======================================== */
+
+.bio {
+  max-width: 620px;
+}
+
+.bio p {
+  margin: 0;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+
+  opacity: 0.62;
+}
+
+/* ========================================
+   CONTACT AREA
+======================================== */
+
+.contactArea {
+  width: 100%;
+
+  margin-top: 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+}
+
+.contactKicker {
+  margin: 0 0 10px;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  text-transform: uppercase;
+
+  opacity: 0.35;
+}
+
+.contactLinks {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 25px;
+}
+
+/* ========================================
+   DETAIL LINK
+======================================== */
+
+.detailLink {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 18px 0;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-top: 1px solid rgba(244, 237, 226, 0.1);
+
+  opacity: 0.65;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.detailLink:hover {
+  opacity: 1;
+
+  transform: translateX(4px);
+
+  border-color: rgba(244, 237, 226, 0.3);
+}
+
+/* ========================================
+   ICON
+======================================== */
+
+.detailIcon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(244, 237, 226, 0.2);
+
+  border-radius: 50%;
+}
+
+.detailIcon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.githubText {
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+}
+
+/* ========================================
+   DETAIL TEXT
+======================================== */
+
+.detailText {
+  min-width: 0;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.detailText small {
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+
+  opacity: 0.45;
+}
+
+.detailText strong {
+  min-width: 0;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  word-break: break-word;
+}
+
+/* ========================================
+   EXTERNAL ARROW
+======================================== */
+
+.externalIcon {
+  width: 16px;
+  height: 16px;
+
+  flex-shrink: 0;
+
+  opacity: 0.5;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.detailLink:hover .externalIcon {
+  opacity: 1;
+
+  transform: translate(2px, -2px);
+}
+
+/* ========================================
+   MISSING GITHUB
+======================================== */
+
+.disabledLink {
+  cursor: default;
+
+  opacity: 0.3;
+}
+
+.disabledLink:hover {
+  transform: none;
+
+  opacity: 0.3;
+
+  border-color: rgba(244, 237, 226, 0.1);
+}
+
+/* ========================================
+   BOTTOM SECTION
+======================================== */
+
+.bottomSection {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 150px 0 120px;
+}
+
+.bottomKicker {
+  margin: 0 0 25px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+  opacity: 0.4;
+}
+
+.bottomSection h2 {
+  margin: 0;
+
+  font-size: clamp(50px, 7vw, 105px);
+
+  line-height: 0.9;
+
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.bottomSection h2 em {
+  font-style: italic;
+}
+
+.homeButton {
+  margin-top: 45px;
+
+  width: fit-content;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 8px;
+
+  color: inherit;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(244, 237, 226, 0.35);
+
+  font-size: 11px;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  transition:
+    gap 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.homeButton:hover {
+  gap: 16px;
+
+  border-color: rgba(244, 237, 226, 0.8);
+}
+
+.homeButton svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding: 35px 0;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(244, 237, 226, 0.12);
+
+  font-size: 8px;
+
+  letter-spacing: 0.16em;
+
+  opacity: 0.4;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .teamPage {
+    padding: 0 22px;
+  }
+
+  /* HEADER */
+
+  .header {
+    padding: 25px 0;
+  }
+
+  .logoBengali {
+    font-size: 19px;
+  }
+
+  .backLink span {
+    display: none;
+  }
+
+  .backLink svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  /* HERO */
+
+  .hero {
+    padding: 80px 0 70px;
+  }
+
+  .kicker {
+    font-size: 8px;
+  }
+
+  .bengali {
+    font-size: 19px;
+  }
+
+  .hero h1 {
+    font-size: 70px;
+  }
+
+  .description {
+    margin-top: 35px;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+  /* TEAM */
+
+  .memberButton {
+    grid-template-columns: 35px 1fr 42px;
+
+    padding: 24px 0;
+  }
+
+  .memberNumber {
+    font-size: 9px;
+  }
+
+  .memberInfo {
+    gap: 6px;
+  }
+
+  .memberInfo strong {
+    font-size: 26px;
+  }
+
+  .memberInfo small {
+    max-width: 230px;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+  }
+
+  .arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .arrow svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* DETAILS */
+
+  .detailsInner {
+    padding-left: 35px;
+    padding-right: 42px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+  }
+
+  .detailsOpen .detailsInner {
+    padding-top: 10px;
+
+    padding-bottom: 35px;
+  }
+
+  /* IMAGE */
+
+  .profileImageWrap {
+    width: 100%;
+
+    max-width: 210px;
+
+    aspect-ratio: 4 / 5;
+  }
+
+  /* INFO */
+
+  .infoArea {
+    width: 100%;
+
+    padding-top: 0;
+  }
+
+  /* BIO */
+
+  .bio {
+    max-width: 100%;
+  }
+
+  .bio p {
+    font-size: 13px;
+
+    line-height: 1.75;
+  }
+
+  /* CONTACT */
+
+  .contactArea {
+    width: 100%;
+
+    margin-top: 30px;
+  }
+
+  .contactKicker {
+    font-size: 8px;
+  }
+
+  .contactLinks {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+  .detailLink {
+    padding: 18px 0;
+
+    gap: 12px;
+  }
+
+  .detailIcon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .detailIcon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .detailText strong {
+    font-size: 11px;
+  }
+
+  .detailText small {
+    font-size: 7px;
+  }
+
+  /* BOTTOM */
+
+  .bottomSection {
+    padding: 100px 0 80px;
+  }
+
+  .bottomKicker {
+    font-size: 8px;
+  }
+
+  .bottomSection h2 {
+    font-size: 58px;
+  }
+
+  /* FOOTER */
+
+  .footer {
+    flex-direction: column;
+
+    gap: 12px;
+
+    font-size: 7px;
+  }
+}
